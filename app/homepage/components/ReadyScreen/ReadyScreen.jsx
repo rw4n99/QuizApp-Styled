@@ -40,7 +40,7 @@ export default function Ready({ onTimerEnd }) {
 
     return (
         <div className="flex h-screen items-center justify-center flex-col">
-            <div className="text-white">Ready?</div>
+            <div className="text-white text-4xl">Ready?</div>
             <div className="relative flex items-center justify-center">
                 <div className="absolute text-6xl text-white">{seconds}</div>
                 <svg className="w-32 h-32">

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Ready from "./components/ReadyScreen/ReadyScreen";
+import QuestionCards from "./components/QuestionCards/QuestionCards";
 import { useState } from "react";
 
 export default function Quiz() {
@@ -11,12 +12,12 @@ export default function Quiz() {
         setShowTimer(false);
     };
     return (
-        <div className="relative h-screen flex flex-col items-center justify-between p-24 text-4xl 
-                        sm:text-6xl text-[#ede9fe] bg-[#4C0827]">
+        <div className="relative h-screen flex flex-col w-full max-w-full overflow-hidden
+                        text-[#ede9fe] bg-[#4C0827]">
         {showTimer? (
             <Ready onTimerEnd={handleTimerEnd} />
         ) : (
-            <div>Quiz</div>
+            <QuestionCards/>
         )}
         </div>
     );
