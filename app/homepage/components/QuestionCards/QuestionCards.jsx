@@ -1,5 +1,6 @@
 "use client";
 
+//Import components
 import React, { useEffect, useState } from 'react';
 import Timer from '../GameTimer/GameTimer';
 import SubHeader from '../SubHeader/SubHeader';
@@ -154,6 +155,7 @@ export default function QuestionCards() {
                 'Please select an answer'
               ) : (
                 <>
+                  {console.log('showSuccess', showSuccess, 'showFail', showFail)}
                   {showSuccess && (
                     <SuccessScreen onClose={handleCloseScreens} score={score} />
                   )}
