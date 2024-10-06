@@ -7,6 +7,7 @@ import SubHeader from '../SubHeader/SubHeader';
 import Button from '../Button/Button';
 import FailScreen from '../FailScreen/FailScreen';
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
+import EndGame from '../EndGame/EndGame';
 
 export default function QuestionCards() {
   const [submit, setSubmit] = useState(false);
@@ -123,9 +124,9 @@ export default function QuestionCards() {
     <div className="space-y-4 w-full max-w-md">
     {shuffledAnswers.map((answer, index) => (
       <div 
-        key={index} 
-        className="flex items-center p-4 bg-[#4C0827] hover:bg-[#6A1B4D] text-white rounded-lg 
-        cursor-pointer">
+      key={index} 
+      className="flex items-center p-4 bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-700 hover:to-purple-500 text-white rounded-full 
+      cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
         <input
           type="radio"
           id={`Answer${index + 1}`}
