@@ -15,15 +15,21 @@ export default function Home() {
       </div>
 
       <div className="z-10 flex flex-col items-center">
-        <h1 className="font-silkscreen text-6xl sm:text-8xl mb-6 animate-fade-in-up">MindSpark</h1>
+        <h1 className="font-silkscreen text-6xl sm:text-8xl mb-6 animate-fade-in-up">QuizPulse</h1>
         <h2 className="text-2xl sm:text-4xl mb-12 text-center animate-fade-in-up animation-delay-200">
-          Can <span className="text-pink-400">YOU</span> beat the boss?
+          Can <span className="text-pink-400">YOU</span> make it to the top?
         </h2>
         <Link href="/homepage">
           <Button
             text="Continue as Guest"
             background="bg-pink-600 hover:bg-pink-700"
-            className="text-xl sm:text-2xl px-8 py-4 rounded-full animate-fade-in-up animation-delay-400"
+            className="text-xl sm:text-2xl px-8 py-4 rounded-full"
+          />
+        </Link>
+        <Link href="/leaderboard">
+          <Button
+            text="Leaderboard"
+            background="m-3 bg-pink-600 hover:bg-pink-700"
           />
         </Link>
       </div>

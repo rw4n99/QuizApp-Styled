@@ -2,6 +2,7 @@
 
 //Import components
 import React, { useEffect, useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import Timer from '../GameTimer/GameTimer';
 import SubHeader from '../SubHeader/SubHeader';
 import Button from '../Button/Button';
@@ -25,6 +26,13 @@ export default function QuestionCards() {
   const [correctAnswerBox, setCorrectAnswerBox] = useState(null);
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
 
+  // Initialize Supabase client
+  const supabaseUrl = 'https://gblyecsjjpamtbjrlwli.supabase.co';
+  const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdibHllY3NqanBhbXRianJsd2xpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgyMjg1OTYsImV4cCI6MjA0MzgwNDU5Nn0.zDuVgamSFVktx0TlS-PxRwqlv2hREJzUypMR9Ro8nLE';
+
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+  // Fetch questions from API
   const randomCorrectAnswer = () => {
     const correctAnswerSelector = Math.floor(Math.random() * 4);
     setCorrectAnswerBox(correctAnswerSelector);
@@ -150,7 +158,6 @@ export default function QuestionCards() {
 
   </div>
 </div>
-
             <div>
               {!answerSelected && submit ? (
                 'Please select an answer'
