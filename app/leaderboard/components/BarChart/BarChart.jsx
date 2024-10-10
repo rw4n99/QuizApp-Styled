@@ -33,7 +33,7 @@ const BarChart = ({ data }) => {
                 display: false,
             },
             tooltip: {
-                enabled: false, // Show tooltips on hover
+                enabled: false,
             }
         }
     };

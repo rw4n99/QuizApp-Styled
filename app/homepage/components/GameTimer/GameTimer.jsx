@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import EndGamePass from '../EndGamePass/EndGamePass';
 
-const Timer = ({ onTimerEnd }) => {
+const Timer = ({ score }) => { 
   const [seconds, setSeconds] = useState(59);
   const [minutes, setMinutes] = useState(4);
   const [isActive, setIsActive] = useState(true);
+  const [isEndGame, setIsEndGame] = useState(false);
+  const [colour, setColour] = useState('bg-[#4C0827]');
 
   useEffect(() => {
     let interval = null;
@@ -15,25 +18,26 @@ const Timer = ({ onTimerEnd }) => {
         } else if (seconds === 0 && minutes > 0) {
           setMinutes(prevMinutes => prevMinutes - 1);
           setSeconds(59);
+        } else {
+          clearInterval(interval);
+          setIsActive(false);
+          setIsEndGame(true);
         }
       }, 1000);
     }
-    
-    if (minutes === 0 && seconds === 0) {
-      clearInterval(interval);
-      setIsActive(false);
-      onTimerEnd();
-    }
 
     return () => clearInterval(interval);
-  }, [isActive, seconds, minutes, onTimerEnd]);
+  }, [isActive, seconds, minutes, isEndGame]);
 
   return (
     <div>
-        <div>
-          {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes
-        </div>
-    </div>
+      <div className="bg-opacity-0 text-2xl sm:text-xl text-[#ede9fe] bg-[#4C0827]">
+        Time left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes
+      </div>
+      <div>
+        {isEndGame && <EndGamePass score={score} />}
+      </div>
+    </div>    
   );
 };
 
