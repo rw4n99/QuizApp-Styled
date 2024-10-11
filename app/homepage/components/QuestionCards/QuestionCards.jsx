@@ -20,13 +20,14 @@ export default function QuestionCards() {
   const [questions, setQuestions] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [correctAnswerBox, setCorrectAnswerBox] = useState(null);
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
   const [endGamePass, setEndGamePass] = useState(false);
 
+
+  // Fetch questions from API
   const fetchQuestions = async () => {
     try {
-      const response = await fetch('https://the-trivia-api.com/v2/questions/');
+      const response = await fetch('https://the-trivia-api.com/v2/questions?difficulty=easy');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -39,7 +40,8 @@ export default function QuestionCards() {
       setLoading(false);
     }
   };
-
+  
+  // Shuffle answers
   const shuffleAnswers = (correctAnswer, incorrectAnswers) => {
     const allAnswers = [...incorrectAnswers, correctAnswer];
     for (let i = allAnswers.length - 1; i > 0; i--) {
@@ -49,6 +51,7 @@ export default function QuestionCards() {
     return allAnswers;
   };
 
+  // Handle click event for uestion submission
   const handleClick = (event) => {
     event.preventDefault();
 
@@ -58,12 +61,12 @@ export default function QuestionCards() {
     }
 
     setSubmit(true);
-    if (pass && lives > 0) {
+    if (pass) {
       setScore((prevScore) => prevScore + 1);
       setShowSuccess(true);
       setShowFail(false);
       setQuestionCount((prevCount) => prevCount + 1);
-    } else if (!pass && lives > 0) {
+    } else if (!pass) {
       setLives((prevLives) => prevLives - 1);
       setShowFail(true);
       setShowSuccess(false);
@@ -73,17 +76,37 @@ export default function QuestionCards() {
     }
   };
 
+
+  //Old handleClick function for form submission - not used anymore - uses lives
+//   setSubmit(true);
+//   if (pass && lives > 0) {
+//     setScore((prevScore) => prevScore + 1);
+//     setShowSuccess(true);
+//     setShowFail(false);
+//     setQuestionCount((prevCount) => prevCount + 1);
+//   } else if (!pass && lives > 0) {
+//     setLives((prevLives) => prevLives - 1);
+//     setShowFail(true);
+//     setShowSuccess(false);
+//     setQuestionCount((prevCount) => prevCount + 1);
+//   } else {
+//     setEndGame(true);
+//   }
+// };
+
+
+// Timer end function
   const onTimerEnd = () => {
     setEndGamePass(true);
   };
 
+  // Close screens function
   const handleCloseScreens = () => {
     setShowSuccess(false);
     setShowFail(false);
     setAnswerSelected(false);
     setPass(null);
     fetchQuestions();
-    // randomCorrectAnswer();
   };
 
   const handleAnswerSelect = (selectedAnswerIndex) => {
@@ -112,13 +135,14 @@ export default function QuestionCards() {
       ) : (
         <div>
           <SubHeader score={score} progress={questionCount} lives={lives} />
-          
+          {/** Timer component**/}
           <div className="pt-20 flex flex-col items-center justify-center h-screen space-y-2">
             <Timer minutes={0} seconds={60} onTimerEnd={onTimerEnd} score={score}/>
             {questions.length > 0 && (
               <legend className="text-3xl font-bold text-center p-8">{questions[0].question.text}</legend>
             )}
             <div className="space-y-4 w-full max-w-md">
+              {/** Answers, mapped**/}
               {shuffledAnswers.map((answer, index) => (
                 <div 
                   key={index} 
@@ -147,6 +171,7 @@ export default function QuestionCards() {
             </div>
           </div>
           <div>
+            {/** Ternary operator for showing fail or success screens**/}
             {!answerSelected && submit ? (
               'Please select an answer'
             ) : (

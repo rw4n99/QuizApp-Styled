@@ -14,12 +14,14 @@ export default function EndGame ({ score, progress, lives }) {
                 <h1 className="text-4xl font-bold mb-6">Game Over ☠</h1>
                 <h2 className="text-2xl mb-4">You ran out of lives</h2>
                 <h2 className="text-2xl mb-4">Final Score: {score}</h2>
+                {/** Button to reload the page**/}
                 <Button 
                     onClick={handleClick} 
                     text="Try again" 
                     background="bg-red-600 hover:bg-red-700"
                     className="px-6 py-2 text-xl text-white rounded-lg"
                 />
+                {/** Button to go to leaderboard page**/}
                 <Link href="/leaderboard">
                 <Button
                     text="Leaderboard"

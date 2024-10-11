@@ -5,12 +5,12 @@ import { createClient } from '@supabase/supabase-js';
 import BarChart from './components/BarChart/BarChart';
 
 // Initialize Supabase client
-const supabaseUrl = 'https://gblyecsjjpamtbjrlwli.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdibHllY3NqanBhbXRianJsd2xpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgyMjg1OTYsImV4cCI6MjA0MzgwNDU5Nn0.zDuVgamSFVktx0TlS-PxRwqlv2hREJzUypMR9Ro8nLE';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-function Leaderboard() {
+export function Leaderboard() {
     const [data, setData] = useState([]);
     const [top3, setTop3] = useState([]);
     const [loading, setLoading] = useState(true);

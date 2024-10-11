@@ -17,7 +17,7 @@ export default function Home() {
       <div className="z-10 flex flex-col items-center">
         <h1 className="font-silkscreen text-6xl sm:text-8xl mb-6 animate-fade-in-up">QuizPulse</h1>
         <h2 className="text-2xl sm:text-4xl mb-12 text-center animate-fade-in-up animation-delay-200">
-          Can <span className="text-pink-400">YOU</span> make it to the top?
+          How many questions can <span className="text-pink-400">YOU</span> answer in 3 minutes?
         </h2>
         <Link href="/homepage">
           <Button

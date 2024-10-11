@@ -3,6 +3,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 
+// FailScreen component
 export default function FailScreen({ onClose, correctAnswerVar }) {
     return (
         <div className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-red-500">
@@ -11,6 +12,7 @@ export default function FailScreen({ onClose, correctAnswerVar }) {
                 <p className="mt-4 text-red-700">The correct answer was: {correctAnswerVar}</p>
             </div>
             <div className="mt-6 w-full flex justify-center">
+                {/** Button to load next question**/}
                 <Button 
                     text="Next Question"
                     background="bg-[#80D39B]"

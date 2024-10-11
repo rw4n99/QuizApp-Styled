@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import EndGamePass from '../EndGamePass/EndGamePass';
 
+// Timer component
 const Timer = ({ score }) => { 
   const [seconds, setSeconds] = useState(59);
   const [minutes, setMinutes] = useState(4);
   const [isActive, setIsActive] = useState(true);
   const [isEndGame, setIsEndGame] = useState(false);
-  const [colour, setColour] = useState('bg-[#4C0827]');
-
+  
   useEffect(() => {
     let interval = null;
 
