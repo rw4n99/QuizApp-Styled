@@ -38,8 +38,8 @@ export default function EndGamePass ({ score, lives }) {
     return (
         <div className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-teal-300 z-10 text-white">
             <div className="text-center p-8 bg-teal-700 rounded-lg shadow-lg">
-                <h1 className="text-4xl font-bold mb-2">Time&aposs up!</h1>
-                <h2 className="text-2xl mb-6">Let&aposs see how you did...</h2>
+                <h1 className="text-4xl font-bold mb-2">Time is up!</h1>
+                <h2 className="text-2xl mb-6">This is how you did...</h2>
                 <h2 className="text-2xl mb-4">Final Score: {score}</h2>
                 <input 
                     className="text-black mb-4" 
