@@ -1,6 +1,11 @@
 # Quiz Pulse
 
 Welcome to my quiz app, where learning is a blast! 🎉 The app features a countdown timer that adds excitement as you answer questions. When time's up, the EndGamePass component reveals your score, which tracks your progress in real-time based on correct answers.
+
+**Click here to start the quiz!**
+
+https://quiz-app-styled-3pp1u08yi-rw4n99s-projects.vercel.app/
+
 ## Features
 
 Interactive quiz experience
