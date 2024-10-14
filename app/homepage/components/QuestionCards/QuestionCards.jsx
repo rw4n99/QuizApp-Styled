@@ -108,7 +108,7 @@ export default function QuestionCards() {
 
   return (
 
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex flex-col items-center justify-center">
     {endGamePass ? (
       <EndGamePass score={score} lives={lives} />
     ) : endGame ? (
@@ -119,7 +119,7 @@ export default function QuestionCards() {
         <div className="flex flex-col items-center justify-center h-screen space-y-2">
           <Timer minutes={0} seconds={60} onTimerEnd={onTimerEnd} score={score} />
           {questions.length > 0 && (
-            <legend className="text-3xl font-bold text-center p-8">{questions[0].question.text}</legend>
+            <legend className="text-xl font-bold text-center md:text-2xl lg:text-3xl xl:text-4xl">{questions[0].question.text}</legend>
           )}
           <div className="space-y-4 w-full max-w-md">
             {shuffledAnswers.map((answer, index) => (

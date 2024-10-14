@@ -65,20 +65,20 @@ export function Leaderboard() {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-top text-[#ede9fe] bg-gradient-to-b from-purple-900 via-purple-700 to-purple-900">
-            <h1 className="font-silkscreen text-4xl sm:text-5xl md:text-7xl mb-4 sm:mb-6 mt-6 sm:mt-10">LeaderBoard</h1>
+        <div className="flex flex-col items-center text-black justify-start text-[#ede9fe] bg-gradient-to-b from-purple-900 via-purple-700 to-purple-900 min-h-screen p-6">
+            <h1 className="font-silkscreen text-4xl sm:text-5xl md:text-7xl mb-6 mt-10 text-center">Leaderboard</h1>
             {loading ? (
-                <p className="text-lg sm:text-xl">Loading...</p>
+                <p className="text-lg sm:text-xl animate-pulse">Loading...</p>
             ) : (
-                <div className="w-full max-w-xl sm:max-w-2xl md:max-w-3xl p-2 sm:p-4">
-                    <div className="mb-4 sm:mb-6">
+                <div className="w-full text-black max-w-xl sm:max-w-2xl md:max-w-3xl p-4 rounded-lg shadow-lg">
+                    <div className="mb-6 text-black">
                         <BarChart data={barData} />
                     </div>
-                    <ul className="space-y-3 sm:space-y-4">
+                    <ul className="space-y-4">
                         {data.map((user, index) => (
-                            <li key={index} className="bg-pink-600 p-3 sm:p-4 rounded-lg">
-                                <p className="font-semibold text-base sm:text-lg">User Name: {user.user_name}</p>
-                                <p className="text-gray-700 text-sm sm:text-base">Score: {user.user_score}</p>
+                            <li key={index} className="bg-gradient-to-r from-purple-500 to-purple-400 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                                <p className="font-semibold text-base sm:text-lg">User Name: <span className="font-normal">{user.user_name}</span></p>
+                                <p className="text-gray-700 text-sm sm:text-base">Score: <span className="font-bold">{user.user_score}</span></p>
                                 <p className="text-gray-500 text-xs sm:text-sm">Remaining time: {user.time_left}</p>
                             </li>
                         ))}
