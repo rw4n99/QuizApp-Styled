@@ -1,3 +1,5 @@
+![Screenshot (254)](https://github.com/user-attachments/assets/a4d4cadc-d7c9-4ccd-9bca-d60783dc89e2)
+
 # Quiz Pulse
 
 Welcome to my quiz app, where learning is a blast! 🎉 The app features a countdown timer that adds excitement as you answer questions. When time's up, the EndGamePass component reveals your score, which tracks your progress in real-time based on correct answers.
