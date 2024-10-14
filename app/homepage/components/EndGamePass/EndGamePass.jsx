@@ -48,6 +48,7 @@ export default function EndGamePass ({ score, lives }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
+                    required
                 />
                 <div>
                     {/** Button to submit score**/}
