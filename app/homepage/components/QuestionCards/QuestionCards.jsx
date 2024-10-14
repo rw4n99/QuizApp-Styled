@@ -16,7 +16,7 @@ export default function QuestionCards() {
   const [endGame, setEndGame] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(5);
+  const [lives, setLives] = useState(100);
   const [questions, setQuestions] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -115,7 +115,7 @@ export default function QuestionCards() {
       <EndGame score={score} lives={lives} />
     ) : (
       <div className="w-full">
-        <SubHeader score={score} progress={questionCount} lives={lives} />
+        <SubHeader score={score} progress={questionCount} />
         <div className="flex flex-col items-center justify-center h-screen space-y-2">
           <Timer minutes={0} seconds={60} onTimerEnd={onTimerEnd} score={score} />
           {questions.length > 0 && (
