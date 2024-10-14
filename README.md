@@ -4,7 +4,7 @@ Welcome to my quiz app, where learning is a blast! 🎉 The app features a count
 
 **Click here to start the quiz!**
 
-https://quiz-app-styled-3pp1u08yi-rw4n99s-projects.vercel.app/
+https://quiz-app-styled.vercel.app/
 
 ## Features
 
