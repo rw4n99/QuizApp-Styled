@@ -114,7 +114,7 @@ export default function QuestionCards() {
     ) : endGame ? (
       <EndGame score={score} lives={lives} />
     ) : (
-      <div className="w-full"> {/* Add w-full to this div */}
+      <div className="w-full">
         <SubHeader score={score} progress={questionCount} lives={lives} />
         <div className="flex flex-col items-center justify-center h-screen space-y-2">
           <Timer minutes={0} seconds={60} onTimerEnd={onTimerEnd} score={score} />
