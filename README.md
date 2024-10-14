@@ -15,6 +15,10 @@ Interactive quiz experience
 Real-time score tracking
 
 User data management - Submit your score to a leaderboard!
+
+![image](https://github.com/user-attachments/assets/dc506491-af30-4b2f-b100-7c6702b6602e) ![image](https://github.com/user-attachments/assets/475367a5-548b-4611-815d-51e6f8811352)
+
+
 ## Objective
 
 Welcome to my quiz app, where learning meets fun! 🎉 My mission is to create an exciting and interactive quiz experience for students. Picture this: a countdown timer ticking down as you tackle a series of thought-provoking questions. When the timer hits zero, the excitement reaches its peak, and the game wraps up, revealing the EndGamePass component!
