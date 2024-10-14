@@ -16,8 +16,8 @@ Real-time score tracking
 
 User data management - Submit your score to a leaderboard!
 
-<img src="https://github.com/user-attachments/assets/dc506491-af30-4b2f-b100-7c6702b6602e" alt="Image 1" width="600"/>
-<img src="https://github.com/user-attachments/assets/475367a5-548b-4611-815d-51e6f8811352" alt="Image 2" width="600"/>
+<img src="https://github.com/user-attachments/assets/dc506491-af30-4b2f-b100-7c6702b6602e" alt="Image 1" width="500"/>
+<img src="https://github.com/user-attachments/assets/475367a5-548b-4611-815d-51e6f8811352" alt="Image 2" width="500"/>
 
 
 
