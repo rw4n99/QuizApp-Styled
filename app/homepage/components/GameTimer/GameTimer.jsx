@@ -7,7 +7,7 @@ const Timer = ({ score }) => {
   const [minutes, setMinutes] = useState(4);
   const [isActive, setIsActive] = useState(true);
   const [isEndGame, setIsEndGame] = useState(false);
-  
+
   useEffect(() => {
     let interval = null;
 
@@ -31,7 +31,7 @@ const Timer = ({ score }) => {
 
   return (
     <div>
-      <div className="bg-opacity-0 text-2xl sm:text-xl text-[#ede9fe] bg-[#4C0827]">
+      <div className="bg-opacity-0 text-xl text-[#ede9fe] bg-[#4C0827]">
         Time left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes
       </div>
       <div>

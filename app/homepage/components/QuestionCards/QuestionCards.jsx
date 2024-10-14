@@ -119,7 +119,7 @@ export default function QuestionCards() {
         <div className="flex flex-col items-center justify-center h-screen space-y-2">
           <Timer minutes={0} seconds={60} onTimerEnd={onTimerEnd} score={score} />
           {questions.length > 0 && (
-            <legend className="text-xl font-bold text-center md:text-2xl lg:text-3xl xl:text-4xl">{questions[0].question.text}</legend>
+            <legend className="text-lg font-bold text-center md:text-2xl lg:text-3xl">{questions[0].question.text}</legend>
           )}
           <div className="space-y-4 w-full max-w-md">
             {shuffledAnswers.map((answer, index) => (
@@ -134,7 +134,7 @@ export default function QuestionCards() {
                   onClick={() => handleAnswerSelect(index)}
                   className="w-6 h-6 mr-4"
                 />
-                <label htmlFor={`Answer${index + 1}`} className="text-2xl">
+                <label htmlFor={`Answer${index + 1}`} className="text-lg md:text-2xl lg:text-2xl">
                   {answer}
                 </label>
               </div>
